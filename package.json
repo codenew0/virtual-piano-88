@@ -1,0 +1,11 @@
+{
+  "name": "virtual-piano-88",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Responsive 88-key browser grand piano",
+  "scripts": {
+    "check": "node --check js/music.js && node --check js/water.js && node --check js/piano.js && node --check js/interaction.js && node --check js/app.js",
+    "build": "node scripts/build-site.mjs",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name virtual-piano-88"
+  }
+}

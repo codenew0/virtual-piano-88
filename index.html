@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07131c">
+  <title>Virtual Piano 88</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="instrument-status">
+        <span class="status-light" aria-hidden="true"></span>
+        <span>Grand Piano</span>
+      </div>
+
+      <div class="brand">
+        <p class="eyebrow">Concert Grand · 88 Keys</p>
+        <h1>Virtual Piano</h1>
+      </div>
+
+      <div class="performance-status" aria-live="polite">
+        <span id="last-note">音源を準備しています…</span>
+        <details class="shortcut-menu">
+          <summary>Shortcuts</summary>
+          <div class="shortcut-panel">
+            <div class="shortcut-panel-header">
+              <strong>Keyboard Shortcuts</strong>
+              <span>A0—C8 · 88 Keys</span>
+            </div>
+            <dl class="shortcut-list">
+              <div>
+                <dt>中央音域</dt>
+                <dd><kbd>1—0</kbd><kbd>Q—P</kbd><kbd>A—M</kbd><kbd>,</kbd></dd>
+              </div>
+              <div>
+                <dt>低音域</dt>
+                <dd><kbd>F13—F24</kbd><kbd>NumPad</kbd></dd>
+              </div>
+              <div>
+                <dt>高音域</dt>
+                <dd><kbd>Ctrl + F13—F24</kbd><kbd>Ctrl + NumPad</kbd></dd>
+              </div>
+            </dl>
+          </div>
+        </details>
+      </div>
+    </header>
+
+    <section class="piano-card" aria-label="88鍵バーチャルピアノ">
+      <div id="visualizer" aria-hidden="true">
+        <div class="river-depth"></div>
+        <canvas id="water-canvas" class="water-canvas"></canvas>
+        <div class="river-current current-far"></div>
+        <div class="river-current current-middle"></div>
+        <div class="river-current current-near"></div>
+        <div class="river-glints"></div>
+        <div class="key-lanes"></div>
+        <p class="visualizer-hint">PLAY THE RIVER</p>
+      </div>
+
+      <div class="fallboard">
+        <span>VIRTUAL</span>
+        <span class="fallboard-mark">88</span>
+        <span>GRAND</span>
+      </div>
+
+      <div id="piano-container" aria-label="A0からC8までのピアノ鍵盤"></div>
+    </section>
+  </main>
+
+  <script src="js/music.js" defer></script>
+  <script src="js/audio.js" defer></script>
+  <script src="js/water.js" defer></script>
+  <script src="js/piano.js" defer></script>
+  <script src="js/interaction.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>

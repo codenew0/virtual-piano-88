@@ -8,6 +8,7 @@ desktop.ini
 # Dependencies, build output, and local files
 node_modules/
 dist/
+.wrangler/
 *.log
 *.tmp
 .env
